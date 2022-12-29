@@ -1,0 +1,2 @@
+PORT=5001
+MONGO_URL='mongodb+srv://admindashboard:<password>@cluster0.8atszch.mongodb.net/?retryWrites=true&w=majority'
