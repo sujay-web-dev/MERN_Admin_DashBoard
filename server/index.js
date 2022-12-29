@@ -12,7 +12,10 @@ import salesRoutes from "./routes/sales.js";
 
 // Data imports
 import User from "./models/UserModel.js";
-import {dataUser} from "./data/index.js"
+import Product from "./models/ProductModel.js";
+import ProductStat from "./models/ProductStatModel.js";
+import {dataUser , dataProduct , dataProductStat } from "./data/index.js";
+
 
 // Configuration
 dotenv.config();
@@ -26,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // ROUTES
-app.use("/client", clientRoutes);
+app.use("/clients", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
@@ -45,6 +48,8 @@ mongoose
 
       // Only Add Data One Time
       // User.insertMany(dataUser)
+      // Product.insertMany(dataProduct);
+      // ProductStat.insertMany(dataProductStat);
     });
   })
   .catch((err) => console.log(`${err} Did NOT Connect`));
